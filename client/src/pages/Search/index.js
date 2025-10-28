@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+
+import axios from 'axios';
+import { Component } from "react";
 import API from "../../utils/API";
 import style from "./style.css";
 import Results from "../../components/Results";
-
-var axios = require("axios");
 
 class Search extends Component {
   
@@ -20,18 +20,12 @@ class Search extends Component {
   };
 
   searchAPI = (query) => {
-    axios({
-      method: "GET",
-      url: "https://www.googleapis.com/books/v1/volumes?q=" + query
-    })
-    .then( (response) => {
-      this.setState({results: response.data.items})
-    })
-    .then( () => {
-      this.updateAuthors();
-    })
-    .then(() => {
-      this.setState({query: " "})
+    axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query)
+    .then((response) => {
+      this.setState({results: response.data.items}, () => {
+        this.updateAuthors();
+        this.setState({query: ""});
+      })
     })
     .catch((error) => {
       console.log(error);
