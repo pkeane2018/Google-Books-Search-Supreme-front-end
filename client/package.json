@@ -7,7 +7,7 @@
     "node": "16.x"
   },
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^1.13.0",
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.11.3",
     "lodash": "^4.17.14",
