@@ -1,8 +1,7 @@
-import React from "react";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import Navbar from "./components/Navbar";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 function App() {
   return (
@@ -11,10 +10,10 @@ function App() {
       <Navbar />
       <br />
       <div className="container">
-      <Switch>
-        <Route exact path="/" component={Search} />
-        <Route exact path="/saved" component={Saved} />
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={<Search/>} />
+        <Route exact path="/saved" element={<Saved/>} />
+      </Routes>
       </div>
     </div>
     </Router>
