@@ -1,33 +1,31 @@
 {
   "name": "mern",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "version": "0.1.0",
+  "private": true,
   "engines": {
     "node": "16.x"
   },
-  "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-prebuild": "cd client && npm install",
-    "heroku-postbuild": "npm run build"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^1.18.7"
-  },
   "dependencies": {
     "axios": "^1.13.0",
-    "concurrently": "^4.1.0",
-    "express": "^4.16.3",
-    "if-env": "^1.0.4",
+    "bootstrap": "^4.4.1",
+    "bootstrap-icons": "^1.11.3",
     "lodash": "^4.17.14",
-    "mongoose": "^5.3.16"
-  }
+    "popper.js": "^1.16.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^6.30.1",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
