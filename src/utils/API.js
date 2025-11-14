@@ -6,7 +6,7 @@ export default {
 
   // Gets all books
   getBooks: function () {
-    return axios.get("http://localhost:8081/api/books");
+    return axios.get(baseUrl + "/api/books");
   },
   getSavedBooks: function () {
     return axios.get(baseUrl + "/api/books/saved")
